@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { Link } from'react-router-dom'
 import { Input, Menu, Dropdown, Image, Segment } from 'semantic-ui-react'
 
-import ImageIcon  from '../../assets/favicon.ico'
+import ImageIcon  from '../assets/favicon.ico'
 
 import faker from 'faker'
 
-export default class MenuNavbar extends Component {
+export default class Navbar extends Component {
   state = { activeItem: 'dashboard', style: '' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -29,35 +30,35 @@ export default class MenuNavbar extends Component {
 
     return (
       <div>
-        <Menu fixed='top' stile={{position: 'relative'}} pointing stackable>
+        <Menu fixed='top' pointing stackable>
 
           <Menu.Item>
             <Image src={ImageIcon} size='mini'/>
           </Menu.Item>
 
-          <Menu.Item name='dashboard' active={activeItem === 'dashboard'} onClick={this.handleItemClick} />
+          <Menu.Item as={Link} to='/' name='dashboard' active={activeItem === 'dashboard'} onClick={this.handleItemClick} />
 
           <Dropdown pointing item text='Clientes'>
             <Dropdown.Menu>
-              <Dropdown.Item>Novo</Dropdown.Item>
-              <Dropdown.Item>Gerenciar</Dropdown.Item>
-              <Dropdown.Item>Detalhes</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/customer/new'>Novo</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/customer/manage'>Gerenciar</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/customer/details'>Detalhes</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
           <Dropdown pointing item text='Funcionarios'>
             <Dropdown.Menu>
-              <Dropdown.Item>Novo</Dropdown.Item>
-              <Dropdown.Item>Gerenciar</Dropdown.Item>
-              <Dropdown.Item>Detalhes</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/employee/new'>Novo</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/employee/manage'>Gerenciar</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/employee/details'>Detalhes</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
           <Dropdown pointing item text='Atendimentos'>
             <Dropdown.Menu>
-              <Dropdown.Item>Novo</Dropdown.Item>
-              <Dropdown.Item>Gerenciar</Dropdown.Item>
-              <Dropdown.Item>Detalhes</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/attendance/new' >Novo</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/attendance/manage'>Gerenciar</Dropdown.Item>
+              <Dropdown.Item as={Link} to='/attendance/details'>Detalhes</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
