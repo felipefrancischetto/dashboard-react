@@ -6,7 +6,11 @@
     "faker": "^4.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-vis": "^1.8.0",
+    "recharts": "^1.0.0-beta.6",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.0"
   },
